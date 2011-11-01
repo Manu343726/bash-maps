@@ -1,0 +1,37 @@
+overview
+========
+bash-maps lets you make use of associative arrays in bash scripts.
+It supports two dimensional associative arrays.
+With bash-maps you can add, delete, retrieve entries.
+You can also iterate over an entire set.
+
+
+* include bash maps in your script
+----------------------------------
+. map.sh
+
+* add an entry
+--------------
+map somemap[entryname]="my first entry value"
+
+* delete an entry
+-----------------
+map del somemap[entryname]
+
+* retrieve an entry
+-------------------
+map somemap[entryname]
+
+* iterate over entries
+----------------------
+map somemap | while read key value; do 
+	echo "entry key: '$key'"
+	echo "entry value: '$value'" 
+done
+
+
+Limitations
+===========
+* keys cannot include spaces and must start with a later or underscode
+
+* values cannot include semi-colon characters
